@@ -4,8 +4,8 @@ if (!isset($_SESSION['kadi_admin'])) {
     header('Localtion:index.php');
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -56,16 +56,15 @@ if (isset($_POST['basla'])) {
         $_SESSION['oturum'] = true;
         echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript">
-        swal("Basarılı Giriş!", "'.$kadi_admin.' Hoş geldin!", "success");
+        swal("Basarılı Giriş!", "' . $kadi_admin . ' Hoş geldin!", "success");
         </script>';
-        $giris=true;
-    
+        $giris = true;
+
     } else {
         header('Location:login.php?hata=yanlis');
-        $giris=false;
+        $giris = false;
     }
-    if($giris==true)
-    {
+    if ($giris == true) {
         header('Location:index.php?');
 
     }
